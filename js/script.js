@@ -2,20 +2,37 @@
 
 
 let shopping_list = [
-    'burrobirra', 
-    'caramelle Mou', 
+    'patatine', 
+    'cioccolato', 
     'Naicha', 
     'Mochi', 
-    'spaghetti di soia',
-    'salsa teriyaki',
-    'baijiu',
+    'vino rosso',
+    'tequila',
+    'prosecco',
+    'amaro-Monte Polizo',
+    'pizza',
 ];
 
 
 let shopList = document.querySelector('.list');
+let addList = document.querySelector('.btn')
+let textList = document.querySelector('.textlist')
+
 let i = 0;
 // debugger
 while (i < shopping_list.length){
     shopList.innerHTML += `<li>${shopping_list[i]}</li>`;
     i++
 }
+
+addList.addEventListener ('click', 
+    function(){
+    shopping_list.push(textList.value);  
+    shopList.innerHTML += `<li>${textList.value}</li>`;
+})
+
+addList.addEventListener ('click', 
+    function(){
+     
+    textList.value = '';
+})
